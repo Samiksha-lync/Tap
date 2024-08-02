@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="main-container">
+           <div class="bg-container">
+                <div class="bg-1"></div>
+                <div class="bg-2"><img src="bg-2.png"></div>
+                <div class="bg-3"><img src="bg-3.png"></div>
+                <div class="bg-4"><img src="frame.png"></div>
+              </div>
+            <div class="nav">
+            <img src="Top Nav Bar.png" alt="navbar">
+         </div>
+
+        <div class="inside-container">
+        <div class="count-bar">
+            <img src="bubble1.png" class="bubble-1">
+            <img src="Count Bar.png" alt="count-bar">
+      </div>
+
+      
+      <div id="progressContainer">
+        <div id="progressBar"></div>
+      </div>
+      <div class="question">
+        <img src="ques.png" class="ques">
+
+      </div>
+      
+        </div>
+        <div class="inside-container-2">
+        <div class="bubble" id="bubble">
+            <div class="bubble-inner"></div>
+            <div class="light"></div>
+        </div>
+
+        <div class="txt">
+           <p> Auto Collect</p>
+        </div>
+
+        <div class="auto-container">
+        <div class="text">Auto Collect</div>
+        <div class="auto ">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label class="switch" for="checkbox">
+              <span class="slider">Auto</span>
+            </label>
+          </div>
+        </div>
+        </div>
+        <div class="footer">
+            <img src="Footer.png" alt="footer">
+        </div>
+    </div>
+
+
+    <script>
+        
+        function checkMobileView() {
+           
+            const mobileQuery = window.matchMedia("(max-width: 700px)");
+            if (!mobileQuery.matches) {
+                
+                alert(" please view this site on a mobile device.");
+            }
+        }  
+        window.onload = checkMobileView;
+        window.onresize = checkMobileView;
+
+
+const progressBar = document.getElementById('progressBar');
+        const tapButton = document.getElementById('bubble');
+        let progress = 0;
+        let isTapping = false;
+        let decrementInterval;
+
+        function incrementProgress() {
+            if (progress < 100) {
+                progress += 0.3;
+                progressBar.style.width = progress + '%';
+            }
+        }
+        function decrementProgress() {
+            if (progress > 0) {
+                progress -= 1;
+                progressBar.style.width = progress + '%';
+            }
+        }
+
+       
+        tapButton.addEventListener('mousedown', () => {
+            isTapping = true;
+            clearInterval(decrementInterval);
+            incrementProgress();
+            const incrementInterval = setInterval(() => {
+                if (isTapping) {
+                    incrementProgress();
+                } else {
+                    clearInterval(incrementInterval);
+                }
+            }, 200);
+        });
+
+        tapButton.addEventListener('mouseup', () => {
+            isTapping = false;
+           
+        });
+
+        tapButton.addEventListener('touchstart', () => {
+            isTapping = true;
+            clearInterval(decrementInterval);
+            incrementProgress();
+            const incrementInterval = setInterval(() => {
+                if (isTapping) {
+                    incrementProgress();
+                } else {
+                    clearInterval(incrementInterval);
+                }
+            }, 200);
+        });
+
+
+    </script>
+</body>
+</html>
