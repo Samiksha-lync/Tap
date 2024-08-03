@@ -29,7 +29,12 @@
     opacity: 50%;
     border: 1px solid white;
     cursor: pointer;
+    transition: all .2s;
 }
+.bubble:active{
+  scale: 0.8;
+}
+
 .bubble-inner {
     position: absolute;
     width: 90%;
@@ -182,6 +187,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content:space-between;
     position:absolute;
     top:0;
     left:0;
@@ -191,7 +197,7 @@
     background-size:cover ;
   }
   nav{
-    width: 100%;
+    width: 70%;
     height: 50px; 
     border-radius: 8px;
     font-size: 0;
@@ -201,6 +207,8 @@
     justify-content: center;
     box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
     overflow: hidden;
+    background: linear-gradient(90.3deg, #373F96 0.11%, #435EC8 52.04%, #373C94 99.82%, #38388E 99.82%);
+border-radius: 6.83208px;
   }
   nav a{
     font-size: 15px;
@@ -224,30 +232,18 @@
     background: #5319d9;
     border-radius: 8px;
     transition: all .5s ease 0s;
+    background: linear-gradient(90deg, #C1FFFB 0%, #A1AAFF 100%);
+box-shadow: 0px 1.36642px 3.41604px rgba(10, 19, 9, 0.12);
+border-radius: 4.78246px;
   }
   nav a:nth-child(1){
-    width: 60px;
+    width: 70px;
   }
   nav .start-home, a:nth-child(1):hover~.animation{
     width: 90px;
     left: 90px;
   }
-  nav a:nth-child(2){
-    width: 60px;
-    
-  }
-  nav a:nth-child(2):hover~.animation{
-    width: 70px;
-    left:150px;
-  
-  }
-  nav a:nth-child(3){
-    width: 60px;
-  }
-  nav a:nth-child(3):hover~.animation{
-    width: 110px;
-    left:230px;
-  }
+
   .slider {
     width: 70px;
     height: 27px;
@@ -263,7 +259,6 @@
     display: grid;
     place-content: center;
     font-family:Arial, Helvetica, sans-serif;
-
   }
   .auto-container{
     display: flex;
@@ -276,7 +271,7 @@
   }
   
   .checkbox:checked + .switch .slider {
-    left: calc(50% - 27px/2 + 10px);
+    left: calc(50% - 20px/2 + 10px);
     top: calc(50% - 27px/2);
   }
   
