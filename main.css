@@ -5,10 +5,10 @@
 }
 
 .main-container{
-    background: url('bg.png'), url('Frame.png'), url('bg-2.png'), url('bg-3.png');
-    background-size: cover, cover, cover, cover; 
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat; 
-    width: 450px;
+    background: url('bg.png');
+    background-size: cover; 
+    background-repeat:  no-repeat; 
+    width: 400px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -18,14 +18,14 @@
     height: 100vh;
 }
 
-
 .bubble {
     width: 100px;
     height: 100px;
-    background: rgba(223, 178, 219, 0.6); 
+    background: rgba(255,255,255, 0.1);
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(168, 215, 231, 0.6); 
+    box-shadow: inset 4px 7px  8px white; 
     animation: bubble-animation 3s infinite;
+    backdrop-filter: blur(2 px);
     opacity: 50%;
     border: 1px solid white;
     cursor: pointer;
@@ -44,8 +44,22 @@
     height: 30%;
     top: 10%;
     left: 20%;
-    background: radial-gradient(circle, rgba(255,255,255,0.6), rgba(255,255,255,0) 70%);
+    background: radial-gradient(circle, rgba(210, 145, 226, 0.6), rgba(169, 158, 158, 0) 70%);
     border-radius:50%;
+}
+.counter{
+  background-color: rgb(10, 10, 112);
+  border: 2px sloid rgb(227, 150, 227);
+  border-radius: 20px;
+  width:150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem;
+  color: white;
+  gap:1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 4;
 }
 
 .inside-container{
@@ -66,13 +80,12 @@
     gap:3rem;
     position: absolute;
     top:-10px;
-    left:190px;
 }
 .bubble-1{
-    z-index: 0;
+    z-index: 1;
     position: relative;
-    top:0px;
-    left:40px;
+    top:33px;
+
 
 }
 .question{
@@ -94,13 +107,13 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 450px;
+    width: 400px;
 }
 .footer img{
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 450px;
+    width: 400px;
     height: 70x;
     z-index: 3;
 }
@@ -135,8 +148,10 @@
     top:650px;
   }
   .txt{
-    position: absolute;
+    position:relative;
     top:630px;
+    left:9px;
+    font-size: 1rem;
     color: white;
     width: 90px;
     font-family:Arial, Helvetica, sans-serif;
@@ -205,8 +220,8 @@
     opacity: 80%;
 }
 .bg-3 img{
-    width:450px;
-    height: 700px;
+    width:100%;
+    height: 90%;
 }
 .bg-4{
     z-index:3;
@@ -225,12 +240,11 @@
     z-index: 4;
     display: flex;
     flex-direction: row;
-   
     box-shadow: inset 0px -2.16px 4.32px rgba(0, 0, 0, 0.25), inset 0px 3.24px 4.32px rgba(255, 255, 255, 0.5), 0px 0px 35px 15px rgba(149, 110, 215, 0.6);
 }
 #progressBar {
     height: 100%;
-    width: 0; /* Default width (0% progress) */
+    width: 0; 
     background: linear-gradient(90deg, #FF6417 1.86%, rgba(112, 0, 255, 0.94) 101%); /* Gradient background */
     transition: width 0.2s; 
     box-shadow: inset 0px -2.16px 4.32px rgba(0, 0, 0, 0.25), inset 0px 3.24px 4.32px rgba(255, 255, 255, 0.5); 

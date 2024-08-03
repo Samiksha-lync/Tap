@@ -21,7 +21,11 @@
         <div class="inside-container">
         <div class="count-bar">
             <img src="bubble1.png" class="bubble-1">
-            <img src="Count Bar.png" alt="count-bar">
+            <div class="counter"> 
+                <div class="counter-display"> <span id="counter">0</span></div>
+            <div class="counter-button" onclick="incrementCounter()">Elements  </div>
+          </div>
+          
       </div>
 
       
@@ -124,6 +128,14 @@ const progressBar = document.getElementById('progressBar');
                 }
             }, 200);
         });
+
+        let count = 0;
+
+function incrementCounter() {
+  count += 1;
+  document.getElementById('counter').textContent = count;
+}
+
 
 
     </script>
