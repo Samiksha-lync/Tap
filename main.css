@@ -49,7 +49,7 @@
 }
 .counter{
   background-color: rgb(10, 10, 112);
-  border: 2px sloid rgb(227, 150, 227);
+  box-shadow: inset  1px  1px rgb(237, 117, 223) ;
   border-radius: 20px;
   width:150px;
   display: flex;

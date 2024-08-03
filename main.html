@@ -102,9 +102,11 @@ const progressBar = document.getElementById('progressBar');
             isTapping = true;
             clearInterval(decrementInterval);
             incrementProgress();
+            incrementCounter();
             const incrementInterval = setInterval(() => {
                 if (isTapping) {
                     incrementProgress();
+                    incrementCounter();
                 } else {
                     clearInterval(incrementInterval);
                 }
@@ -120,9 +122,11 @@ const progressBar = document.getElementById('progressBar');
             isTapping = true;
             clearInterval(decrementInterval);
             incrementProgress();
+            incrementCounter();
             const incrementInterval = setInterval(() => {
                 if (isTapping) {
                     incrementProgress();
+                    incrementCounter();
                 } else {
                     clearInterval(incrementInterval);
                 }
